@@ -1,0 +1,10 @@
+<!--pages/newsDetail/newsDetail.wxml-->
+<text>pages/newsDetail/newsDetail.wxml</text>
+
+<!-- switchTab 跳转tabBar 关闭其他非tabBar-->
+<navigator url='../index/index' open-type="switchTab">点击跳转到首页tabBar</navigator>
+
+<navigator url='../index/index' open-type="reLaunch">reLaunch信息列表----11---进入新闻详情</navigator>
+
+<!-- navigateBack -->
+<navigator open-type="navigateBack">返回</navigator>

@@ -2,14 +2,14 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/news/news",
+    "pages/order/order",
     "pages/about/about",
     "pages/newsDetail/newsDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFCC00",
-    "navigationBarTitleText": "基本配置",
+    "navigationBarTitleText": "活过来了",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -25,7 +25,7 @@
         "selectedIconPath": "images/home2.png"
       },
       {
-        "pagePath": "pages/news/news",
+        "pagePath": "pages/order/order",
         "text": "订单",
         "iconPath": "images/order.png",
         "selectedIconPath": "images/order2.png"

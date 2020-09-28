@@ -1,10 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/news/news",
     "pages/demand/demand",
     "pages/logs/logs",
     "pages/order/order",
     "pages/about/about",
+    "pages/jobsearch/jobsearch",
     "pages/newsDetail/newsDetail"
   ],
   "window": {
@@ -24,6 +26,12 @@
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home2.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "images/news.png",
+        "selectedIconPath": "images/news2.png"
       },
       {
         "pagePath": "pages/demand/demand",

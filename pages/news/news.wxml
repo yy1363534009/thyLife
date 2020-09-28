@@ -1,0 +1,16 @@
+  <!-- 2.滑块视图容器  轮播图 -->
+  <swiper class='swiper' indicator-dots='true' indicator-color='#fff' autoplay='true' interval='3000' circular='true'>
+    <swiper-item>
+      <image src='../../images/1.jpg'></image>
+    </swiper-item>
+    <swiper-item><image src='../../images/1.jpg'></image></swiper-item>
+    <swiper-item><image src='../../images/1.jpg'></image></swiper-item>
+ </swiper>
+ <navigator url='../newsDetail/newsDetail'>信息列表----11---进入新闻详情</navigator>
+ <navigator url='../newsDetail/newsDetail' open-type="redirect">redirect信息列表----11---进入新闻详情</navigator>
+ <navigator url='../newsDetail/newsDetail' open-type="reLaunch">reLaunch信息列表----11---进入新闻详情</navigator>
+<navigator open-type="exit" target="miniProgram">退出小程序</navigator>
+
+
+
+

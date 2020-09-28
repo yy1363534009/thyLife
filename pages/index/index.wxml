@@ -3,7 +3,7 @@
   <view class="menu-container">
     <view class="menu">
       <view class="menu-row-image">
-        <view class="column-image">
+        <view class="column-image" bindtap="goPage" data-pagename="jobsearch">
           <text>1</text>
         </view>
         <view class="column-image">
@@ -30,8 +30,37 @@
           <text>农机租借</text>
         </view>
       </view>
+      <view class="menu-row-image" style="margin-top:30rpx;">
+        <view class="column-image">
+          <text>一</text>
+        </view>
+        <view class="column-image">
+          <text>二</text>
+        </view>
+        <view class="column-image">
+          <text>三</text>
+        </view>
+        <view class="column-image">
+          <text>四</text>
+        </view>
+      </view>
+      <view class="menu-row-text">
+        <view class="column-text">
+          <text>找活</text>
+        </view>
+        <view class="column-text">
+          <text>招工</text>
+        </view>
+        <view class="column-text">
+          <text>农机出租</text>
+        </view>
+        <view class="column-text">
+          <text>农机租借</text>
+        </view>
+      </view>
     </view>
   </view>
+  <view class="menu-container-blank"></view>
   <view class="body-container">
     <view class="body">
       <view class="column">

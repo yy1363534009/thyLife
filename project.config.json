@@ -71,8 +71,8 @@
       "list": [
         {
           "id": 0,
-          "name": "pages/newsDetail/newsDetail",
-          "pathName": "pages/newsDetail/newsDetail",
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
           "query": "",
           "scene": null
         },

@@ -1,4 +1,4 @@
-//index.js
+// pages/news/news.js
 Page({
 
   /**
@@ -62,18 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 跳转页面
-   */
-  goPage: function (event) {
-    let pageName = event.currentTarget.dataset.pagename;
-    console.log("跳转页面："+pageName)
-    let url = '../'+pageName+'/'+pageName;
-    wx.navigateTo({
-      url: url
-    })
   }
-
 })

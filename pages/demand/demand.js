@@ -1,4 +1,4 @@
-//index.js
+// pages/demand/demand.js
 Page({
 
   /**

@@ -1,21 +1,67 @@
 /**index.wxss**/
-.userinfo {
+
+.container {
+  height: 100%;
+  background-color: #f3f3f3;
+  overflow-x:hidden;/**禁止左右滑动**/
+} 
+
+.menu-container {
+  background-image: linear-gradient(to bottom, #FFCC00,#FFFFFF);
+  height: 400rpx;
+  width: 100%;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+}
+
+.menu{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 360rpx;
+  width: 710rpx;
+  background-color: #FFFFFF;
+  padding-top: 40rpx;
+}
+.menu-row-image{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.menu-row-text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.column-image{
+  text-align: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background-color: #FFCC00;
+  border-radius: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.column-text{
+  font-size:24rpx;
+  text-align: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 120rpx;
+  padding-top: 20rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.body-container{
+  background-color: #FFFFFF;
+  margin-top: 10px;
+  height: 400rpx;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.body{
+  height: 100%;
+  background-color: #FFFFFF;
 }

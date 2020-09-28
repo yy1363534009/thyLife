@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/demand/demand",
     "pages/logs/logs",
     "pages/order/order",
     "pages/about/about",
@@ -23,6 +24,12 @@
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home2.png"
+      },
+      {
+        "pagePath": "pages/demand/demand",
+        "text": "需求",
+        "iconPath": "images/demand.png",
+        "selectedIconPath": "images/demand2.png"
       },
       {
         "pagePath": "pages/order/order",

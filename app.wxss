@@ -2,15 +2,13 @@
 /* @import 'coomon/base.wxss'; */
 
 /**app.wxss**/
-.container {
+/* .container {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}  */
 
 /* 全局的样式 
   1.样式式全局样式 作用所有的页面  但是页面单独配置样式权重大于app.wxss

@@ -1,13 +1,42 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class="menu-container">
+    <view class="menu">
+      <view class="menu-row-image">
+        <view class="column-image">
+          <text>1</text>
+        </view>
+        <view class="column-image">
+          <text>2</text>
+        </view>
+        <view class="column-image">
+          <text>3</text>
+        </view>
+        <view class="column-image">
+          <text>4</text>
+        </view>
+      </view>
+      <view class="menu-row-text">
+        <view class="column-text">
+          <text>找活</text>
+        </view>
+        <view class="column-text">
+          <text>招工</text>
+        </view>
+        <view class="column-text">
+          <text>农机出租</text>
+        </view>
+        <view class="column-text">
+          <text>农机租借</text>
+        </view>
+      </view>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="body-container">
+    <view class="body">
+      <view class="column">
+        <text>招工</text>
+      </view>
+    </view>
   </view>
 </view>

@@ -12,7 +12,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // wx.request({
+    //   url: 'http://localhost:8089/index/', //仅为示例，并非真实的接口地址
+    //   method: 'GET',
+    //   data: {
+    //     x: 'abc',
+    //     y: '123'
+    //   },
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   success(res) {
+    //     console.log('状态码：' + res.statusCode + '，响应结果：' + res.data)
+    //   },
+    //   fail(res) {
+    //     console.log('状态码：' + res.statusCode + '，响应结果：' + res.data)
+    //   },
+    //   complete(res) {
+    //     console.log('页面加载后台请求结束' + '状态码：' + res.statusCode + '，响应结果：' + res.data)
+    //   }
+    // })
   },
 
   /**
@@ -69,8 +88,8 @@ Page({
    */
   goPage: function (event) {
     let pageName = event.currentTarget.dataset.pagename;
-    console.log("跳转页面："+pageName)
-    let url = '../'+pageName+'/'+pageName;
+    console.log('跳转页面：' + pageName)
+    let url = '../' + pageName + '/' + pageName;
     wx.navigateTo({
       url: url
     })
@@ -80,8 +99,8 @@ Page({
    */
   goTabPage: function (event) {
     let pageName = event.currentTarget.dataset.pagename;
-    console.log("跳转Tab页面："+pageName)
-    let url = '../'+pageName+'/'+pageName;
+    console.log('跳转Tab页面：' + pageName)
+    let url = '../' + pageName + '/' + pageName;
     wx.switchTab({
       url: url,
     })

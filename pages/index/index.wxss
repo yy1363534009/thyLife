@@ -2,7 +2,7 @@
 
 .container {
   height: 100%;
-  background-color: #f3f3f3;
+  background-color: #fafafa;
   overflow-x:hidden;/**禁止左右滑动**/
 } 
 
@@ -16,14 +16,14 @@
 
 .menu-bottom-blank{
   width: 100%;
-  height: 250rpx;
+  height: 200rpx;
   background-color: #FFFFFF;
 }
 
 .menu{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 410rpx;
+  height: 360rpx;
   width: 710rpx;
   background-color: #FFFFFF;
   padding-top: 40rpx;
@@ -35,23 +35,74 @@
   box-sizing: border-box;
 }
 
-.column-image{
+.column-image-container-jobsearch{
   text-align: center;
   margin-left: 30rpx;
   margin-right: 30rpx;
   background-color: #FFCC00;
-  border-radius: 20rpx;
+  border-radius: 25rpx;
   width: 120rpx;
   height: 120rpx;
 }
-.column-image-bottom{
+.column-image-container-peoplesearch{
   text-align: center;
-  margin-left: 50rpx;
-  margin-right: 50rpx;
-  border-radius: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background-color: #FF9900;
+  border-radius: 25rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.column-image-container-rentmachinery{
+  text-align: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background-color: #33CCCC;
+  border-radius: 25rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.column-image-container-secondmachinery{
+  text-align: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background-color: #FF3300;
+  border-radius: 25rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+.column-image-jobsearch{
+  padding-top: 15rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background-size:100% 100%;
+}
+.column-image-peoplesearch{
+  padding-top: 25rpx;
   width: 70rpx;
   height: 70rpx;
   background-size:100% 100%;
+}
+.column-image-rentmachinery{
+  padding-top: 15rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background-size:100% 100%;
+}
+.column-image-secondmachinery{
+  padding-top: 15rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background-size:100% 100%;
+}
+.column-image-bottom{
+  text-align: center;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+  border-radius: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  /* background-size:100% 100%; */
 }
 .column-text{
   font-size:24rpx;
@@ -61,16 +112,52 @@
   width: 120rpx;
   padding-top: 20rpx;
 }
+.column-text-bottom{
+  font-size:24rpx;
+  text-align: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  width: 120rpx;
+  padding-top: 10rpx;
+}
 
-.body-container{
+.hostnews-container{
   background-color: #FFFFFF;
   margin-top: 10px;
   height: 400rpx;
   padding-top: 20rpx;
   padding-left: 20rpx;
+  height: 100%;
 }
 
-.body{
-  height: 100%;
-  background-color: #FFFFFF;
+.hostnews-header{
+  font-size: 26rpx;
+}
+.hostnews-header-text{
+  font-size: 22rpx;
+  margin-left: 450rpx;
+}
+
+.hostnews-body{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+}
+
+.host-content{
+  text-align: center;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+  background-color: #FFCC00;
+  border-radius: 25rpx;
+  width: 220rpx;
+  height: 220rpx;
+}
+.host-contenttext{
+  font-size: 22rpx;
+  width: 220rpx;
+  height: auto;
+  overflow-wrap: break-word
 }

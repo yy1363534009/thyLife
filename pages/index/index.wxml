@@ -4,32 +4,32 @@
     <view class="menu">
       <view class="menu-row">
         <view bindtap="goPage" data-pagename="jobsearch">
-          <view class="column-image">
-            <text>1</text>
+          <view class="column-image-container-jobsearch">
+            <image class="column-image-jobsearch" src="../../images/menu-jobsearch.png"></image>
           </view>
           <view class="column-text">
             <text>找活</text>
           </view>
         </view>
         <view>
-          <view class="column-image">
-            <text>2</text>
+          <view class="column-image-container-peoplesearch">
+            <image class="column-image-peoplesearch" src="../../images/menu-peoplesearch.png"></image>
           </view>
           <view class="column-text">
             <text>招工</text>
           </view>
         </view>
         <view>
-          <view class="column-image">
-            <text>3</text>
+          <view class="column-image-container-rentmachinery">
+            <image class="column-image-rentmachinery" src="../../images/menu-rentmachinery.png"></image>
           </view>
           <view class="column-text">
             <text>租用农机</text>
            </view>
         </view>
         <view>
-          <view class="column-image">
-            <text>4</text>
+          <view class="column-image-container-secondmachinery">
+            <image class="column-image-secondmachinery" src="../../images/menu-secondmachinery.png"></image>
           </view>
           <view class="column-text">
             <text>二手农机</text>
@@ -39,25 +39,25 @@
       <view class="menu-row" style="margin-top:40rpx;">
         <view bindtap="goPage" data-pagename="jobsearch">
           <image class='column-image-bottom' src="../../images/waitdevelop.png" mode="aspectFill"></image>
-          <view class="column-text">
+          <view class="column-text-bottom">
             <text>待开发</text>
           </view>
         </view>
         <view>
           <image class='column-image-bottom' src="../../images/waitdevelop.png" mode="aspectFill"></image>
-          <view class="column-text">
+          <view class="column-text-bottom">
             <text>待开发</text>
           </view>
         </view>
         <view>
           <image class='column-image-bottom' src="../../images/waitdevelop.png" mode="aspectFill"></image>
-          <view class="column-text">
+          <view class="column-text-bottom">
             <text>待开发</text>
           </view>
         </view>
         <view>
           <image class='column-image-bottom' src="../../images/waitdevelop.png" mode="aspectFill"></image>
-          <view class="column-text">
+          <view class="column-text-bottom">
             <text>待开发</text>
           </view>
         </view>
@@ -65,10 +65,29 @@
     </view>
   </view>
   <view class="menu-bottom-blank"></view>
-  <view class="body-container">
-    <view class="body">
-      <view class="column">
-        <text>招工</text>
+  <view class="hostnews-container">
+    <view class="hostnews-header">
+      <text>每日推荐专区</text>
+      <text class="hostnews-header-text"  bindtap="goTabPage" data-pagename="news">更多热点></text>
+    </view>
+    <view class="hostnews-body">
+      <view>
+        <image class="host-content" src="../../images/hostmsg1.png"></image>
+        <view class="host-contenttext">
+          <text>秒杀**************</text>
+        </view>
+      </view>
+      <view>
+        <image class="host-content" src="../../images/hostmsg1.png"></image>
+        <view class="host-contenttext">
+          <text>秒杀**************</text>
+        </view>
+      </view>
+      <view>
+        <image class="host-content" src="../../images/hostmsg1.png"></image>
+        <view class="host-contenttext">
+          <text>秒杀**************</text>
+        </view>
       </view>
     </view>
   </view>

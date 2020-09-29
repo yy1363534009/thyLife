@@ -74,6 +74,16 @@ Page({
     wx.navigateTo({
       url: url
     })
+  },
+  /**
+   * 跳转tab页面
+   */
+  goTabPage: function (event) {
+    let pageName = event.currentTarget.dataset.pagename;
+    console.log("跳转Tab页面："+pageName)
+    let url = '../'+pageName+'/'+pageName;
+    wx.switchTab({
+      url: url,
+    })
   }
-
 })

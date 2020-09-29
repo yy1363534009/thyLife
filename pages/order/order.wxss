@@ -11,5 +11,5 @@
   display: inline-block;
   margin: 25rpx 0;
   padding-left: 30rpx;
-  padding-right: 30rpx;
+  padding-right: 25rpx;
 }

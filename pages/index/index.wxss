@@ -14,7 +14,7 @@
   padding-left: 20rpx;
 }
 
-.menu-container-blank{
+.menu-bottom-blank{
   width: 100%;
   height: 250rpx;
   background-color: #FFFFFF;
@@ -28,13 +28,7 @@
   background-color: #FFFFFF;
   padding-top: 40rpx;
 }
-.menu-row-image{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-.menu-row-text{
+.menu-row{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -50,6 +44,15 @@
   width: 120rpx;
   height: 120rpx;
 }
+.column-image-bottom{
+  text-align: center;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  border-radius: 20rpx;
+  width: 70rpx;
+  height: 70rpx;
+  background-size:100% 100%;
+}
 .column-text{
   font-size:24rpx;
   text-align: center;
@@ -58,7 +61,6 @@
   width: 120rpx;
   padding-top: 20rpx;
 }
-
 
 .body-container{
   background-color: #FFFFFF;

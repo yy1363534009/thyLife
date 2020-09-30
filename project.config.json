@@ -94,6 +94,14 @@
           "id": -1,
           "name": "pages/newsDetail/newsDetail",
           "pathName": "pages/newsDetail/newsDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/jobsearch/jobsearch",
+          "pathName": "pages/jobsearch/jobsearch",
+          "query": "",
           "scene": null
         }
       ]

@@ -35,89 +35,80 @@
   box-sizing: border-box;
 }
 
-.column-image-container-jobsearch{
+.menu-row navigator{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.column-image-container{
   text-align: center;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
+  border-radius: 25rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.jobsearch{
   background-color: #FFCC00;
-  border-radius: 25rpx;
-  width: 120rpx;
-  height: 120rpx;
 }
-.column-image-container-peoplesearch{
-  text-align: center;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
+.peoplesearch{
   background-color: #FF9900;
-  border-radius: 25rpx;
-  width: 120rpx;
-  height: 120rpx;
 }
-.column-image-container-rentmachinery{
-  text-align: center;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
+.rentmachinery{
   background-color: #33CCCC;
-  border-radius: 25rpx;
-  width: 120rpx;
-  height: 120rpx;
 }
-.column-image-container-secondmachinery{
-  text-align: center;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
+.secondmachinery{
   background-color: #FF3300;
-  border-radius: 25rpx;
-  width: 120rpx;
-  height: 120rpx;
+}
+.land{
+  background-color: #666600;
 }
 .column-image-jobsearch{
-  padding-top: 25rpx;
+  padding-top: 15rpx;
   width: 90rpx;
   height: 90rpx;
   background-size:100% 100%;
 }
 .column-image-peoplesearch{
-  padding-top: 30rpx;
-  width: 80rpx;
-  height: 90rpx;
+  padding-top: 25rpx;
+  width: 70rpx;
+  height: 80rpx;
   background-size:100% 100%;
 }
 .column-image-rentmachinery{
-  padding-top: 35rpx;
-  width: 100rpx;
+  padding-top: 15rpx;
+  width: 90rpx;
   height: 90rpx;
   background-size:100% 100%;
 }
 .column-image-secondmachinery{
-  padding-top: 20rpx;
-  width: 100rpx;
-  height: 110rpx;
+  padding-top: 15rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background-size:100% 100%;
+}
+.column-image-land{
+  padding-top: 30rpx;
+  width: 70rpx;
+  height: 70rpx;
   background-size:100% 100%;
 }
 .column-image-bottom{
   text-align: center;
-  margin-left: 60rpx;
-  margin-right: 60rpx;
   border-radius: 20rpx;
   width: 60rpx;
   height: 60rpx;
-  /* background-size:100% 100%; */
+  background-size:100% 100%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
 }
 .column-text{
   font-size:24rpx;
   text-align: center;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
-  width: 120rpx;
+  width: 100rpx;
   padding-top: 20rpx;
 }
 .column-text-bottom{
   font-size:24rpx;
   text-align: center;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
-  width: 120rpx;
+  width: 100rpx;
   padding-top: 10rpx;
 }
 

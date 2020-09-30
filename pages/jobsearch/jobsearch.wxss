@@ -1,0 +1,110 @@
+.container {
+  height: 100%;
+  background-color: #FFFFFF;
+  overflow-x:hidden;/**禁止左右滑动**/
+} 
+.menu-container {
+  /* background-image: linear-gradient(to bottom, #FFCC00,#FFFFFF); */
+  height: 200rpx;
+  width: 100%;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+}
+
+.menu-bottom-blank{
+  width: 100%;
+  height: 200rpx;
+  background-color: #FFFFFF;
+}
+
+.menu{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 360rpx;
+  width: 710rpx;
+  background-color: #FFFFFF;
+  padding-top: 40rpx;
+}
+.menu-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.menu-row navigator{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.column-image-container{
+  text-align: center;
+  border-radius: 25rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.jobsearch{
+  background-color: #FFCC00;
+}
+.peoplesearch{
+  background-color: #FF9900;
+}
+.rentmachinery{
+  background-color: #33CCCC;
+}
+.secondmachinery{
+  background-color: #FF3300;
+}
+.land{
+  background-color: #666600;
+}
+.column-image-jobsearch{
+  padding-top: 15rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background-size:100% 100%;
+}
+.column-image-peoplesearch{
+  padding-top: 25rpx;
+  width: 70rpx;
+  height: 80rpx;
+  background-size:100% 100%;
+}
+.column-image-rentmachinery{
+  padding-top: 15rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background-size:100% 100%;
+}
+.column-image-secondmachinery{
+  padding-top: 15rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background-size:100% 100%;
+}
+.column-image-land{
+  padding-top: 30rpx;
+  width: 70rpx;
+  height: 70rpx;
+  background-size:100% 100%;
+}
+.column-image-bottom{
+  text-align: center;
+  border-radius: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-size:100% 100%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.column-text{
+  font-size:24rpx;
+  text-align: center;
+  width: 100rpx;
+  padding-top: 20rpx;
+}
+.column-text-bottom{
+  font-size:24rpx;
+  text-align: center;
+  width: 100rpx;
+  padding-top: 10rpx;
+}

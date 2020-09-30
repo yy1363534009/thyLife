@@ -3,11 +3,11 @@
     "pages/index/index",
     "pages/news/news",
     "pages/demand/demand",
-    "pages/logs/logs",
     "pages/order/order",
     "pages/about/about",
     "pages/jobsearch/jobsearch",
-    "pages/newsDetail/newsDetail"
+    "pages/newsDetail/newsDetail",
+    "pages/me/me"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -52,6 +52,9 @@
         "selectedIconPath": "images/me2.png"
       }
     ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

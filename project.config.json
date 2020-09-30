@@ -82,6 +82,19 @@
           "pathName": "pages/index/index",
           "query": "",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "colorui/components/cu-custom",
+          "pathName": "colorui/components/cu-custom",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/newsDetail/newsDetail",
+          "pathName": "pages/newsDetail/newsDetail",
+          "scene": null
         }
       ]
     }

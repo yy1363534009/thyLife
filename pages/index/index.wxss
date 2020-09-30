@@ -72,27 +72,27 @@
   height: 120rpx;
 }
 .column-image-jobsearch{
-  padding-top: 15rpx;
+  padding-top: 25rpx;
   width: 90rpx;
   height: 90rpx;
   background-size:100% 100%;
 }
 .column-image-peoplesearch{
-  padding-top: 25rpx;
-  width: 70rpx;
-  height: 70rpx;
+  padding-top: 30rpx;
+  width: 80rpx;
+  height: 90rpx;
   background-size:100% 100%;
 }
 .column-image-rentmachinery{
-  padding-top: 15rpx;
-  width: 90rpx;
+  padding-top: 35rpx;
+  width: 100rpx;
   height: 90rpx;
   background-size:100% 100%;
 }
 .column-image-secondmachinery{
-  padding-top: 15rpx;
-  width: 90rpx;
-  height: 90rpx;
+  padding-top: 20rpx;
+  width: 100rpx;
+  height: 110rpx;
   background-size:100% 100%;
 }
 .column-image-bottom{

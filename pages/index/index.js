@@ -5,13 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    cardCur: 0,
+    swiperList: [{
+      id: 0,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+    }, {
+      id: 1,
+        type: 'image',
+        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+    }, {
+      id: 2,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.towerSwiper('swiperList');
+    // 初始化towerSwiper 传已有的数组名即可
+
     // wx.request({
     //   url: 'http://localhost:8089/index/', //仅为示例，并非真实的接口地址
     //   method: 'GET',
@@ -103,6 +119,24 @@ Page({
     let url = '../' + pageName + '/' + pageName;
     wx.switchTab({
       url: url,
+    })
+  },
+  // cardSwiper
+  cardSwiper(e) {
+    this.setData({
+      cardCur: e.detail.current
+    })
+  },
+  // towerSwiper
+  // 初始化towerSwiper
+  towerSwiper(name) {
+    let list = this.data[name];
+    for (let i = 0; i < list.length; i++) {
+      list[i].zIndex = parseInt(list.length / 2) + 1 - Math.abs(i - parseInt(list.length / 2))
+      list[i].mLeft = i - parseInt(list.length / 2)
+    }
+    this.setData({
+      swiperList: list
     })
   }
 })

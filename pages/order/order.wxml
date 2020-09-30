@@ -1,7 +1,7 @@
-<scroll-view class='navBar' scroll-x='true'>
-    <text>全部订单</text>
-    <text>待付款</text>
-    <text>待确认</text>
-    <text>待评价</text>
-    <text>退款 / 售后</text>
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tab}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
 </scroll-view>

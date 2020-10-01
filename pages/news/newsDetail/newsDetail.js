@@ -4,7 +4,7 @@ Page({
   appraiseShowChangge(e) {
     console.log('显示评价切换方法')
     this.setData({
-      appraiseIsShow: true
+      appraiseIsShow: !this.data.appraiseIsShow
     })
   },
 });

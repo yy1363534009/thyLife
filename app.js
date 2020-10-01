@@ -21,6 +21,7 @@ App({
 		}
       }
     })
+    // console.log('appjs-Custom:'+this.globalData.Custom+'-CustomBar:'+this.globalData.CustomBar)
   },
   globalData: {
     userInfo: null,

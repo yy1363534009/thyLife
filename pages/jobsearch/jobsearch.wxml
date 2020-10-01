@@ -1,7 +1,7 @@
 <view class="container">
   <cu-custom bgColor="bg-gradual-white" isBack="{{true}}">
     <view slot="backText">返回</view>
-    <view slot="content">模态窗口</view>
+    <view slot="content">找活</view>
   </cu-custom>
   <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
     <view class="search-form round">

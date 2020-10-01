@@ -1,7 +1,4 @@
 /* 样式*/
-navigator{
-  margin-top:10rpx
-}
 .swiper{
   background: pink;
   height: 440rpx;

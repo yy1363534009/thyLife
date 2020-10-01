@@ -91,9 +91,9 @@
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/newsDetail/newsDetail",
-          "pathName": "pages/newsDetail/newsDetail",
+          "id": 3,
+          "name": "pages/news/newsDetail/newsDetail",
+          "pathName": "pages/news/newsDetail/newsDetail",
           "query": "",
           "scene": null
         },

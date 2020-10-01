@@ -61,7 +61,12 @@ Page({
       name: '100元',
       checked: false,
       hot: false,
-    }]
+    }],
+    // 导航start
+    TabCur: 0,
+    scrollLeft:0,
+    tab:['全部订单','待付款','待开工','待确认','待评价','退款 / 售后'],
+    // 导航end
   },
   showModal(e) {
     this.setData({
@@ -88,5 +93,19 @@ Page({
   },
   search(event) {
     console.log('搜索的值是：'+event.detail.value);
+  },
+  /**
+   * 导航选中时间
+   * @param {*} e 
+   */
+  tabSelect(e) {
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id-1)*60
+    })
+    const id = e.currentTarget.dataset.id;
+    if(id==0){
+      console.log('全部订单');
+    }
   }
 })

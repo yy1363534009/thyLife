@@ -7,10 +7,11 @@
 } 
 
 .menu-container {
-  background-image: linear-gradient(to bottom, #FFCC00,#FFFFFF);
+  /* background-image: linear-gradient(to bottom, #FFCC00,#FFFFFF); */
+  background-color: #FFFFFF;
   height: 200rpx;
   width: 100%;
-  padding-top: 20rpx;
+  /* padding-top: 20rpx; */
   padding-left: 20rpx;
 }
 

@@ -1,5 +1,26 @@
 <!--index.wxml-->
 <view class="container">
+  <!-- 全屏限高轮播 -->
+  <!-- <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+      autoplay="true" interval="2000" duration="500">
+      <swiper-item wx:for="{{swiperList}}" wx:key>
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+          wx:if="{{item.type=='video'}}"></video>
+      </swiper-item>
+    </swiper> -->
+  <!-- 卡片式轮播 -->
+  <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="2000"
+    duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff"
+    style="margin-top:-20rpx;background-color:#FFFFFF">
+    <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+          wx:if="{{item.type=='video'}}"></video>
+      </view>
+    </swiper-item>
+  </swiper>
   <!-- 菜单start -->
   <view class="menu-container">
     <view class="menu">
@@ -27,7 +48,7 @@
           </view>
           <view class="column-text">
             <text>租用农机</text>
-           </view>
+          </view>
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
           <view class="column-image-container secondmachinery">
@@ -82,21 +103,11 @@
     </view>
   </view>
   <view class="menu-bottom-blank"></view>
-  <view>
-    <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="2000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
-      <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
-        <view class="swiper-item">
-          <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-          <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
-        </view>
-      </swiper-item>
-    </swiper>
-  </view>
   <!-- 每日推荐专区start -->
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <text class="hostnews-header-text"  bindtap="goTabPage" data-pagename="news">更多热点></text>
+      <text class="hostnews-header-text" bindtap="goTabPage" data-pagename="news">更多热点></text>
     </view>
     <view class="hostnews-body">
       <view>
@@ -123,7 +134,7 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <text class="hostnews-header-text"  bindtap="goTabPage" data-pagename="news">更多热点></text>
+      <text class="hostnews-header-text" bindtap="goTabPage" data-pagename="news">更多热点></text>
     </view>
     <view class="hostnews-body">
       <view>
@@ -150,7 +161,7 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <text class="hostnews-header-text"  bindtap="goTabPage" data-pagename="news">更多热点></text>
+      <text class="hostnews-header-text" bindtap="goTabPage" data-pagename="news">更多热点></text>
     </view>
     <view class="hostnews-body">
       <view>
@@ -177,7 +188,7 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <text class="hostnews-header-text"  bindtap="goTabPage" data-pagename="news">更多热点></text>
+      <text class="hostnews-header-text" bindtap="goTabPage" data-pagename="news">更多热点></text>
     </view>
     <view class="hostnews-body">
       <view>

@@ -1,0 +1,5 @@
+.container {
+  height: 100%;
+  background-color: #FFFFFF;
+  overflow-x:hidden;/**禁止左右滑动**/
+} 

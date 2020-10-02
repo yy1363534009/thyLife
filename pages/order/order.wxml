@@ -5,4 +5,9 @@
     </view>
   </view>
 </scroll-view>
+<import src="../../templates/itemList/itemList.wxml" />
+<view wx:for="{{ itemList }}">
+  <template is='itemList' data='{{ item }}'></template>
+</view>
+
 

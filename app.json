@@ -1,12 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/jobsearch/jobsearch",
+    "pages/index/jobsearch/jobsearch",
     "pages/news/news",
     "pages/news/newsDetail/newsDetail",
     "pages/demand/demand",
     "pages/order/order",
     "pages/about/about",
+    "pages/search/search",
+    "pages/selectCity/selectCity",
     "pages/me/me"
   ],
   "window": {

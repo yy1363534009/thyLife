@@ -91,9 +91,6 @@ Page({
       checkbox: items
     })
   },
-  search(event) {
-    console.log('搜索的值是：'+event.detail.value);
-  },
   /**
    * 导航选中时间
    * @param {*} e 

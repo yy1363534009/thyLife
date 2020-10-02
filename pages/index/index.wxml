@@ -26,7 +26,7 @@
     <view class="menu">
       <!-- 菜单第一行start -->
       <view class="menu-row">
-        <navigator class="" hover-class="none" url="../jobsearch/jobsearch">
+        <navigator class="" hover-class="none" url="../index/jobsearch/jobsearch">
           <view class="column-image-container jobsearch">
             <image class="column-image-jobsearch" src="../../images/index/menu-jobsearch.png"></image>
           </view>
@@ -34,7 +34,7 @@
             <text>找活</text>
           </view>
         </navigator>
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
           <view class="column-image-container peoplesearch">
             <image class="column-image-peoplesearch" src="../../images/index/menu-peoplesearch.png"></image>
           </view>
@@ -42,7 +42,7 @@
             <text>招工</text>
           </view>
         </navigator>
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
           <view class="column-image-container rentmachinery">
             <image class="column-image-rentmachinery" src="../../images/index/menu-rentmachinery.png"></image>
           </view>
@@ -50,7 +50,7 @@
             <text>租用农机</text>
           </view>
         </navigator>
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
           <view class="column-image-container secondmachinery">
             <image class="column-image-secondmachinery" src="../../images/index/menu-secondmachinery.png"></image>
           </view>
@@ -58,7 +58,7 @@
             <text>二手农机</text>
           </view>
         </navigator>
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
           <view class="column-image-container land">
             <image class="column-image-land" src="../../images/index/menu-land.png"></image>
           </view>
@@ -69,31 +69,31 @@
       </view>
       <!-- 菜单第二行start -->
       <view class="menu-row" style="margin-top:40rpx;">
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
-          <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
-          <view class="column-text-bottom">
-            <text>土地承包</text>
-          </view>
-        </navigator>
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
           <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
             <text>粮食回收</text>
           </view>
         </navigator>
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
           <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
-            <text>品种排行</text>
+            <text>种子</text>
           </view>
         </navigator>
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
           <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
-            <text>天气预报</text>
+            <text>化肥</text>
           </view>
         </navigator>
-        <navigator hover-class="none" url="../jobsearch/jobsearch">
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
+          <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
+          <view class="column-text-bottom">
+            <text>排行榜</text>
+          </view>
+        </navigator>
+        <navigator hover-class="none" url="../index/jobsearch/jobsearch">
           <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
             <text>天气预报</text>
@@ -107,7 +107,7 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <text class="hostnews-header-text" bindtap="goTabPage" data-pagename="news">更多热点></text>
+      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点></navigator>
     </view>
     <view class="hostnews-body">
       <view>
@@ -134,7 +134,7 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <text class="hostnews-header-text" bindtap="goTabPage" data-pagename="news">更多热点></text>
+      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点></navigator>
     </view>
     <view class="hostnews-body">
       <view>
@@ -161,34 +161,7 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <text class="hostnews-header-text" bindtap="goTabPage" data-pagename="news">更多热点></text>
-    </view>
-    <view class="hostnews-body">
-      <view>
-        <image class="host-content" src="../../images/index/hostmsg1.png"></image>
-        <view class="host-contenttext">
-          <text>秒杀**************</text>
-        </view>
-      </view>
-      <view>
-        <image class="host-content" src="../../images/index/hostmsg1.png"></image>
-        <view class="host-contenttext">
-          <text>秒杀**************</text>
-        </view>
-      </view>
-      <view>
-        <image class="host-content" src="../../images/index/hostmsg1.png"></image>
-        <view class="host-contenttext">
-          <text>秒杀**************</text>
-        </view>
-      </view>
-    </view>
-  </view>
-  <!-- 每日推荐专区start -->
-  <view class="hostnews-container">
-    <view class="hostnews-header">
-      <text>每日推荐专区</text>
-      <text class="hostnews-header-text" bindtap="goTabPage" data-pagename="news">更多热点></text>
+      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点></navigator>
     </view>
     <view class="hostnews-body">
       <view>

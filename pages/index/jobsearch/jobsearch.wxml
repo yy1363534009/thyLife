@@ -3,12 +3,12 @@
     <view slot="backText">返回</view>
     <view slot="content">找活</view>
   </cu-custom>
-  <view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <navigator class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;" hover-class="none" url="../../search/search">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <input type="text" placeholder="输入搜索的关键词" confirm-type="search" bindconfirm='search'></input>
+      <input type="text" placeholder="输入搜索的关键词"disabled="none"></input>
     </view>
-  </view>
+  </navigator>
   <!-- 菜单start -->
   <view class="menu-container" style="margin-top:120rpx;">
     <view class="menu">
@@ -16,7 +16,7 @@
       <view class="menu-row">
         <navigator class="" hover-class="none" url="../jobsearch/jobsearch">
           <view class="column-image-container jobsearch">
-            <image class="column-image-jobsearch" src="../../images/index/menu-jobsearch.png"></image>
+            <image class="column-image-jobsearch" src="../../../images/index/menu-jobsearch.png"></image>
           </view>
           <view class="column-text">
             <text>找活</text>
@@ -24,7 +24,7 @@
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
           <view class="column-image-container peoplesearch">
-            <image class="column-image-peoplesearch" src="../../images/index/menu-peoplesearch.png"></image>
+            <image class="column-image-peoplesearch" src="../../../images/index/menu-peoplesearch.png"></image>
           </view>
           <view class="column-text">
             <text>招工</text>
@@ -32,7 +32,7 @@
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
           <view class="column-image-container rentmachinery">
-            <image class="column-image-rentmachinery" src="../../images/index/menu-rentmachinery.png"></image>
+            <image class="column-image-rentmachinery" src="../../../images/index/menu-rentmachinery.png"></image>
           </view>
           <view class="column-text">
             <text>租用农机</text>
@@ -40,7 +40,7 @@
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
           <view class="column-image-container secondmachinery">
-            <image class="column-image-secondmachinery" src="../../images/index/menu-secondmachinery.png"></image>
+            <image class="column-image-secondmachinery" src="../../../images/index/menu-secondmachinery.png"></image>
           </view>
           <view class="column-text">
             <text>二手农机</text>
@@ -48,7 +48,7 @@
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
           <view class="column-image-container land">
-            <image class="column-image-land" src="../../images/index/menu-land.png"></image>
+            <image class="column-image-land" src="../../../images/index/menu-land.png"></image>
           </view>
           <view class="column-text">
             <text>土地承包</text>
@@ -58,31 +58,31 @@
       <!-- 菜单第二行start -->
       <view class="menu-row" style="margin-top:40rpx;">
         <navigator hover-class="none" url="../jobsearch/jobsearch">
-          <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
+          <image class='column-image-bottom' src="../../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
             <text>土地承包</text>
           </view>
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
-          <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
+          <image class='column-image-bottom' src="../../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
             <text>粮食回收</text>
           </view>
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
-          <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
+          <image class='column-image-bottom' src="../../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
             <text>品种排行</text>
           </view>
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
-          <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
+          <image class='column-image-bottom' src="../../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
             <text>天气预报</text>
           </view>
         </navigator>
         <navigator hover-class="none" url="../jobsearch/jobsearch">
-          <image class='column-image-bottom' src="../../images/index/waitdevelop.png" mode="aspectFill"></image>
+          <image class='column-image-bottom' src="../../../images/index/waitdevelop.png" mode="aspectFill"></image>
           <view class="column-text-bottom">
             <text>天气预报</text>
           </view>

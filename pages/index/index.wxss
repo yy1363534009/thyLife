@@ -124,6 +124,7 @@
 
 .hostnews-header{
   font-size: 26rpx;
+  display: flex;
 }
 .hostnews-header-text{
   font-size: 22rpx;

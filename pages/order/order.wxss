@@ -1,4 +1,5 @@
 /* 样式*/
+@import '../../templates/itemList/itemList.wxss'
 
 /* 滚动的导航 */
 .navBar{

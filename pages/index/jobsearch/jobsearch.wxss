@@ -3,8 +3,10 @@
 .container {
   height: 100%;
   background-color: #FFFFFF;
-  overflow-x:hidden;/**禁止左右滑动**/
-} 
+  overflow-x: hidden;
+  /**禁止左右滑动**/
+}
+
 .menu-container {
   /* background-image: linear-gradient(to bottom, #FFCC00,#FFFFFF); */
   height: 200rpx;
@@ -13,13 +15,13 @@
   padding-left: 20rpx;
 }
 
-.menu-bottom-blank{
+.menu-bottom-blank {
   width: 100%;
   height: 200rpx;
   background-color: #FFFFFF;
 }
 
-.menu{
+.menu {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 360rpx;
@@ -27,86 +29,163 @@
   background-color: #FFFFFF;
   padding-top: 40rpx;
 }
-.menu-row{
+
+.menu-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   box-sizing: border-box;
 }
 
-.menu-row navigator{
+.menu-row navigator {
   padding-left: 20rpx;
   padding-right: 20rpx;
 }
-.column-image-container{
+
+.column-image-container {
   text-align: center;
   border-radius: 25rpx;
   width: 100rpx;
   height: 100rpx;
 }
-.jobsearch{
+
+.jobsearch {
   background-color: #FFCC00;
 }
-.peoplesearch{
+
+.peoplesearch {
   background-color: #FF9900;
 }
-.rentmachinery{
+
+.rentmachinery {
   background-color: #33CCCC;
 }
-.secondmachinery{
+
+.secondmachinery {
   background-color: #FF3300;
 }
-.land{
+
+.land {
   background-color: #666600;
 }
-.column-image-jobsearch{
+
+.column-image-jobsearch {
   padding-top: 15rpx;
   width: 90rpx;
   height: 90rpx;
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
-.column-image-peoplesearch{
+
+.column-image-peoplesearch {
   padding-top: 25rpx;
   width: 70rpx;
   height: 80rpx;
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
-.column-image-rentmachinery{
+
+.column-image-rentmachinery {
   padding-top: 15rpx;
   width: 90rpx;
   height: 90rpx;
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
-.column-image-secondmachinery{
+
+.column-image-secondmachinery {
   padding-top: 15rpx;
   width: 90rpx;
   height: 90rpx;
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
-.column-image-land{
+
+.column-image-land {
   padding-top: 30rpx;
   width: 70rpx;
   height: 70rpx;
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
-.column-image-bottom{
+
+.column-image-bottom {
   text-align: center;
   border-radius: 20rpx;
   width: 60rpx;
   height: 60rpx;
-  background-size:100% 100%;
+  background-size: 100% 100%;
   margin-left: 20rpx;
   margin-right: 20rpx;
 }
-.column-text{
-  font-size:24rpx;
+
+.column-text {
+  font-size: 24rpx;
   text-align: center;
   width: 100rpx;
   padding-top: 20rpx;
 }
-.column-text-bottom{
-  font-size:24rpx;
+
+.column-text-bottom {
+  font-size: 24rpx;
   text-align: center;
   width: 100rpx;
   padding-top: 10rpx;
 }
+
+/* -- 下拉筛选Start -- */
+.search-container-top {
+  z-index: 5;
+  top: 120rpx;
+  position: fixed;
+  width: 100%;
+}
+
+.search {
+  position: relative;
+  background-color: #FFFFFF;
+  z-index: 5;
+  height: 80rpx;
+  padding-top: 40rpx;
+}
+
+.search-all {
+  position: relative;
+  z-index: 5;
+  height: 400rpx;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.search-nearby {
+  position: relative;
+  z-index: 5;
+  height: 400rpx;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.search-order {
+  position: relative;
+  z-index: 5;
+  height: 400rpx;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.search-filter {
+  position: relative;
+  z-index: 5;
+  height: 400rpx;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+.search-bg {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgb(162, 163, 163);
+  opacity: 0.5;
+}
+.selected{
+  color: #FF9900;
+}
+/* -- 下拉筛选End -- */

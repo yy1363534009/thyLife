@@ -101,16 +101,67 @@
       </view>
     </scroll-view>
   </view>
-  <!-- 导航条Start -->
+  <!-- 下拉筛选Start -->
   <!-- <scroll-view scroll-x class="bg-white nav fixed" style="top:{{CustomBar}}px;" > -->
-  <scroll-view scroll-x class="bg-white nav">
-    <view class="flex text-center">
-      <view class="cu-item flex-sub" wx:for="{{tab}}" wx:key bindtap="tabSelect" data-id="{{index}}">
-        {{item}}
+  <view>
+    <scroll-view scroll-x class="bg-white nav" class="search">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub" bindtap="selectAll" data-nav="1">
+          <text class="{{shownavindex == 1?'selected':''}}">全部</text>
+          <text class="cuIcon-triangleupfill lg text-gray" wx:if="{{shownavindex == 1}}"></text>
+          <text class="cuIcon-triangledownfill lg text-gray" wx:else></text>
+        </view>
+        <view class="cu-item flex-sub" bindtap="selectNearby" data-nav="2">
+          <text class="{{shownavindex == 2?'selected':''}}">附近</text>
+          <text class="cuIcon-triangleupfill lg text-gray" wx:if="{{shownavindex == 2}}"></text>
+          <text class="cuIcon-triangledownfill lg text-gray" wx:else></text>
+        </view>
+        <view class="cu-item flex-sub" bindtap="selectOrder" data-nav="3">
+          <text class="{{shownavindex == 3?'selected':''}}">智能排序</text>
+          <text class="cuIcon-triangleupfill lg text-gray" wx:if="{{shownavindex == 3}}"></text>
+          <text class="cuIcon-triangledownfill lg text-gray" wx:else></text>
+        </view>
+        <view class="cu-item flex-sub" bindtap="selectfilter" data-nav="4">
+          <text class="{{shownavindex == 4?'selected':''}}">筛选</text>
+          <text class="cuIcon-triangleupfill lg text-gray" wx:if="{{shownavindex == 4}}"></text>
+          <text class="cuIcon-triangledownfill lg text-gray" wx:else></text>
+        </view>
       </view>
-    </view>
-  </scroll-view>
-  <!-- 导航条End -->
+    </scroll-view>
+  </view>
+  <!-- 隐藏显示区 -->
+  <view class="search-container-top'" wx:if="{{shownavindex != ''}}">
+    <scroll-view scroll-x class="bg-white nav" class="search">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub" bindtap="selectAll" data-nav="1">
+          <text class="{{shownavindex == 1?'selected':''}}">全部</text>
+          <text class="cuIcon-triangleupfill lg text-gray" wx:if="{{shownavindex == 1}}"></text>
+          <text class="cuIcon-triangledownfill lg text-gray" wx:else></text>
+        </view>
+        <view class="cu-item flex-sub" bindtap="selectNearby" data-nav="2">
+          <text class="{{shownavindex == 2?'selected':''}}">附近</text>
+          <text class="cuIcon-triangleupfill lg text-gray" wx:if="{{shownavindex == 2}}"></text>
+          <text class="cuIcon-triangledownfill lg text-gray" wx:else></text>
+        </view>
+        <view class="cu-item flex-sub" bindtap="selectOrder" data-nav="3">
+          <text class="{{shownavindex == 3?'selected':''}}">智能排序</text>
+          <text class="cuIcon-triangleupfill lg text-gray" wx:if="{{shownavindex == 3}}"></text>
+          <text class="cuIcon-triangledownfill lg text-gray" wx:else></text>
+        </view>
+        <view class="cu-item flex-sub" bindtap="selectfilter" data-nav="4">
+          <text class="{{shownavindex == 4?'selected':''}}">筛选</text>
+          <text class="cuIcon-triangleupfill lg text-gray" wx:if="{{shownavindex == 4}}"></text>
+          <text class="cuIcon-triangledownfill lg text-gray" wx:else></text>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="search-all" wx:if="{{shownavindex == 1}}">全部</view>
+    <view class="search-nearby" wx:if="{{shownavindex == 2}}">附近</view>
+    <view class="search-order" wx:if="{{shownavindex == 3}}">智能排序</view>
+    <view class="search-filter" wx:if="{{shownavindex == 4}}">筛选</view>
+    <view class="search-bg" wx:if="{{shownavindex != ''}}" bindtap="hidensearch"></view>
+  </view>
+  <!-- 下拉筛选End -->
   <import src="../../../templates/itemList/itemList.wxml" />
   <view wx:for="{{ itemList }}">
     <template is='itemList' data='{{ item }}'></template>

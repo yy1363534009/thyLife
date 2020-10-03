@@ -8,8 +8,8 @@ Page({
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
     }, {
       id: 1,
-        type: 'image',
-        url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
     }, {
       id: 2,
       type: 'image',
@@ -62,40 +62,39 @@ Page({
       checked: false,
       hot: false,
     }],
-    // 导航start
-    TabCur: 0,
-    scrollLeft:0,
-    tab:['全部','附近','只能排序','筛选认'],
-    // 导航end
+    // 下拉筛选start
+    shownavindex: '',
+    // 下拉筛选end
     //订单数据start
     itemList: [{
-      pic: '../../../images/index/hostmsg.png',
-      name: '狗肉',
-      description: '新鲜的狗肉',
-      price: 2000.00,
-      buynum: 5999
-    },
-    {
-      pic: '../../../images/index/hostmsg.png',
-      name: '狗肉',
-      description: '新鲜的狗肉',
-      price: 2000.00,
-      buynum: 5999
-    },
-    {
-      pic: '../../../images/index/hostmsg.png',
-      name: '狗肉',
-      description: '新鲜的狗肉',
-      price: 2000.00,
-      buynum: 5999
-    },
-    {
-      pic: '../../../images/index/hostmsg.png',
-      name: '狗肉',
-      description: '新鲜的狗肉',
-      price: 2000.00,
-      buynum: 5999
-    }]
+        pic: '../../../images/index/hostmsg.png',
+        name: '狗肉',
+        description: '新鲜的狗肉',
+        price: 2000.00,
+        buynum: 5999
+      },
+      {
+        pic: '../../../images/index/hostmsg.png',
+        name: '狗肉',
+        description: '新鲜的狗肉',
+        price: 2000.00,
+        buynum: 5999
+      },
+      {
+        pic: '../../../images/index/hostmsg.png',
+        name: '狗肉',
+        description: '新鲜的狗肉',
+        price: 2000.00,
+        buynum: 5999
+      },
+      {
+        pic: '../../../images/index/hostmsg.png',
+        name: '狗肉',
+        description: '新鲜的狗肉',
+        price: 2000.00,
+        buynum: 5999
+      }
+    ]
     //订单数据end
   },
   showModal(e) {
@@ -121,18 +120,37 @@ Page({
       checkbox: items
     })
   },
-  /**
-   * 导航选中时间
-   * @param {*} e 
-   */
-  tabSelect(e) {
+  // 下拉筛选---------------------------------------start----------------------------------
+
+  selectAll(e) {
+    console.log('下拉筛选选中[全部]索引' + e.currentTarget.dataset.nav)
     this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id-1)*60
+      shownavindex: e.currentTarget.dataset.nav
     })
-    const id = e.currentTarget.dataset.id;
-    if(id==0){
-      console.log('全部订单');
-    }
-  }
+  },
+  selectNearby(e) {
+    console.log('下拉筛选选中[附近]索引' + e.currentTarget.dataset.nav)
+    this.setData({
+      shownavindex: e.currentTarget.dataset.nav
+    })
+  },
+  selectOrder(e) {
+    console.log('下拉筛选选中[智能排序]索引' + e.currentTarget.dataset.nav)
+    this.setData({
+      shownavindex: e.currentTarget.dataset.nav
+    })
+  },
+  selectfilter(e) {
+    console.log('下拉筛选选中[帅选]索引' + e.currentTarget.dataset.nav)
+    this.setData({
+      shownavindex: e.currentTarget.dataset.nav
+    })
+  },
+  hidensearch() {
+    this.setData({
+      shownavindex: ''
+    })
+  },
+
+  // 下拉筛选---------------------------------------end------------------------------------
 })

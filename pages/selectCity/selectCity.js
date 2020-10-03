@@ -7,14 +7,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hotCity: [], //热门城市
-    longitude: "113.324520",
-    latitude: "23.099994"
+    hotCity: ['北京', '上海', '广州', '深圳', '天津', '西安', '重庆', '杭州', '南京'], //热门城市
+
+    // latitude: "23.099994",
+    // longitude: "113.324520",
+
+    latitude: "31.23037",
+    longitude: "121.4737",
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     //第一步：获取热门城市
     // http('get', '/api/hot/city', {}, '', res => {
     //   console.log(res);
@@ -24,7 +28,25 @@ Page({
     // })
   },
   //第二步:点击定位---1.获取当前的经纬度  2.显示所在的城市  3.返回食疗坊 带着当前城市
-  getLocation: function() {
+  getLocation: function () {
+    wx.getLocation({
+      success: (res) => {
+        console.log('获取当前的位置:' + res);
+        console.log(res);
+        var latitude = res.latitude;
+        var longitude = res.longitude;
+        this.setData({
+          latitude: latitude,
+          longitude: longitude
+        })
+      },
+    })
+    const cityName = '上海';
+    app.globalData.cityName = cityName;
+    wx.setStorageSync('cityName', cityName);
+    // wx.switchTab({
+    //   url: '../index/index',
+    // })
     //1.小程序的api获取当前的位置
     // wx.getLocation({
     //   success: (res) => {
@@ -56,7 +78,7 @@ Page({
     //         // wx.reLaunch({
     //         //   url: '../food/food?cityName=' + cityName,
     //         // })
-          
+
     //       }
     //     })
 
@@ -64,61 +86,61 @@ Page({
     // })
   },
   //第三步：点击人城市按钮--切换当前的城市 1.点击按钮获取当前的点击城市 2.把获取的值存储本地 全局 3.跳转页面
-  selectCity:function(e){
-    // var cityName=e.currentTarget.dataset.name;
-    // app.globalData.cityName=cityName;
-    // wx.setStorageSync('cityName', cityName);
-    // wx.switchTab({
-    //   url: '../food/food',
-    // })
+  selectCity: function (e) {
+    var cityName = e.currentTarget.dataset.name;
+    app.globalData.cityName = cityName;
+    wx.setStorageSync('cityName', cityName);
+    wx.switchTab({
+      url: '../index/index',
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

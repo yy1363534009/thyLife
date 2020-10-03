@@ -1,5 +1,12 @@
 <!--index.wxml-->
 <view class="container">
+  <cu-custom bgColor="bg-gradual-white">
+    <view slot="right" class='loaction'>
+      <navigator url='../selectCity/selectCity' hover-class='none'>{{location}}<text
+          class="cuIcon-triangledownfill lg text-gray"></text></navigator>
+    </view>
+    <view slot="content">活过来了</view>
+  </cu-custom>
   <!-- 全屏限高轮播 -->
   <!-- <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
       autoplay="true" interval="2000" duration="500">
@@ -107,7 +114,8 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点></navigator>
+      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点>
+      </navigator>
     </view>
     <view class="hostnews-body">
       <view>
@@ -134,7 +142,8 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点></navigator>
+      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点>
+      </navigator>
     </view>
     <view class="hostnews-body">
       <view>
@@ -161,7 +170,8 @@
   <view class="hostnews-container">
     <view class="hostnews-header">
       <text>每日推荐专区</text>
-      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点></navigator>
+      <navigator class="hostnews-header-text" url='../news/news' open-type="switchTab" hover-class="none">更多热点>
+      </navigator>
     </view>
     <view class="hostnews-body">
       <view>

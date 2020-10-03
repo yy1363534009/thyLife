@@ -5,7 +5,11 @@
   background-color: #fafafa;
   overflow-x:hidden;/**禁止左右滑动**/
 } 
-
+.loaction{
+  width: 100rpx;
+  text-align: center;
+  padding-left: 15rpx;
+}
 .menu-container {
   /* background-image: linear-gradient(to bottom, #FFCC00,#FFFFFF); */
   background-color: #FFFFFF;

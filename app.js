@@ -24,6 +24,7 @@ App({
     // console.log('appjs-Custom:'+this.globalData.Custom+'-CustomBar:'+this.globalData.CustomBar)
   },
   globalData: {
+    cityName:'',//切换的城市的变量
     userInfo: null,
     ColorList: [{
       title: '嫣红',

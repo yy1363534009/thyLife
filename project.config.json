@@ -98,9 +98,16 @@
           "scene": null
         },
         {
+          "id": 4,
+          "name": "pages/index/jobsearch/jobsearch",
+          "pathName": "pages/index/jobsearch/jobsearch",
+          "query": "",
+          "scene": null
+        },
+        {
           "id": -1,
-          "name": "pages/jobsearch/jobsearch",
-          "pathName": "pages/jobsearch/jobsearch",
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
           "query": "",
           "scene": null
         }

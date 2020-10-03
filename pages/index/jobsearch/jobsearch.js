@@ -65,8 +65,38 @@ Page({
     // 导航start
     TabCur: 0,
     scrollLeft:0,
-    tab:['全部订单','待付款','待开工','待确认','待评价','退款 / 售后'],
+    tab:['全部','附近','只能排序','筛选认'],
     // 导航end
+    //订单数据start
+    itemList: [{
+      pic: '../../../images/index/hostmsg.png',
+      name: '狗肉',
+      description: '新鲜的狗肉',
+      price: 2000.00,
+      buynum: 5999
+    },
+    {
+      pic: '../../../images/index/hostmsg.png',
+      name: '狗肉',
+      description: '新鲜的狗肉',
+      price: 2000.00,
+      buynum: 5999
+    },
+    {
+      pic: '../../../images/index/hostmsg.png',
+      name: '狗肉',
+      description: '新鲜的狗肉',
+      price: 2000.00,
+      buynum: 5999
+    },
+    {
+      pic: '../../../images/index/hostmsg.png',
+      name: '狗肉',
+      description: '新鲜的狗肉',
+      price: 2000.00,
+      buynum: 5999
+    }]
+    //订单数据end
   },
   showModal(e) {
     this.setData({

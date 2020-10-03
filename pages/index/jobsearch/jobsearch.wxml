@@ -3,14 +3,14 @@
     <view slot="backText">返回</view>
     <view slot="content">找活</view>
   </cu-custom>
-  <navigator class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;" hover-class="none" url="../../search/search">
+  <navigator class="cu-bar bg-white search" hover-class="none" url="./search/search">
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <input type="text" placeholder="输入搜索的关键词"disabled="none"></input>
+      <input type="text" placeholder="输入搜索的关键词" disabled="none"></input>
     </view>
   </navigator>
   <!-- 菜单start -->
-  <view class="menu-container" style="margin-top:120rpx;">
+  <view class="menu-container">
     <view class="menu">
       <!-- 菜单第一行start -->
       <view class="menu-row">
@@ -102,15 +102,19 @@
     </scroll-view>
   </view>
   <!-- 导航条Start -->
+  <!-- <scroll-view scroll-x class="bg-white nav fixed" style="top:{{CustomBar}}px;" > -->
   <scroll-view scroll-x class="bg-white nav">
     <view class="flex text-center">
-      <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tab}}" wx:key bindtap="tabSelect"
-        data-id="{{index}}">
+      <view class="cu-item flex-sub" wx:for="{{tab}}" wx:key bindtap="tabSelect" data-id="{{index}}">
         {{item}}
       </view>
     </view>
   </scroll-view>
   <!-- 导航条End -->
+  <import src="../../../templates/itemList/itemList.wxml" />
+  <view wx:for="{{ itemList }}">
+    <template is='itemList' data='{{ item }}'></template>
+  </view>
   <view class="cu-bar bg-white margin-top">
     <view class="action">
       <text class="cuIcon-title text-orange "></text> 普通窗口

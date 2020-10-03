@@ -44,9 +44,9 @@ Page({
     const cityName = '上海';
     app.globalData.cityName = cityName;
     wx.setStorageSync('cityName', cityName);
-    // wx.switchTab({
-    //   url: '../index/index',
-    // })
+    wx.switchTab({
+      url: '../index/index',
+    })
     //1.小程序的api获取当前的位置
     // wx.getLocation({
     //   success: (res) => {

@@ -24,6 +24,7 @@ App({
     // console.log('appjs-Custom:'+this.globalData.Custom+'-CustomBar:'+this.globalData.CustomBar)
   },
   globalData: {
+    ak:'XSpSgFpfDC5ZMUq6cojw3XqpFa8VGmDF',
     cityName:'',//切换的城市的变量
     userInfo: null,
     ColorList: [{

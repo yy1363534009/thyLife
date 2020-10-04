@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    location: '上海',
+    location: '齐齐哈尔市',
     cardCur: 0,
     swiperList: [{
       id: 0,
@@ -29,10 +29,10 @@ Page({
   onLoad: function (options) {
     //进入页面获取本地存储 查看是否有之前选择的城市区域----
     //如果有本地存储 重新设置 location  没有数据 使用默认上海
-    var cityName = wx.getStorageSync('cityName');
-    if (cityName) {
+    var city = wx.getStorageSync('cityStorage');
+    if (city.cityName) {
       this.setData({
-        location: cityName
+        location: city.cityName
       })
     }
 

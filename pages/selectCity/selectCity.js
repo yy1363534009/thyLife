@@ -1,19 +1,19 @@
 // pages/selectCity/selectCity.js
-// var http = require('../../utils/http.js');
+// var http = require('../../common/http.js');
 var app = getApp();
+var mapapi = require('../../common/baidu-map-api.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hotCity: ['北京', '上海', '广州', '深圳', '天津', '西安', '重庆', '杭州', '南京'], //热门城市
+    hotCity: ['北京', '上海', '广州', '深圳', '天津', '西安', '重庆', '杭州', '南京', '齐齐哈尔'], //热门城市
 
     // latitude: "23.099994",
     // longitude: "113.324520",
-
-    latitude: "31.23037",
-    longitude: "121.4737",
+    latitude: "46.397830",
+    longitude: "123.423627",
   },
   /**
    * 生命周期函数--监听页面加载
@@ -31,68 +31,57 @@ Page({
   getLocation: function () {
     wx.getLocation({
       success: (res) => {
-        console.log('获取当前的位置:' + res);
+        console.log('获取当前的位置:', +res);
         console.log(res);
         var latitude = res.latitude;
         var longitude = res.longitude;
         this.setData({
           latitude: latitude,
           longitude: longitude
-        })
+        });
+        mapapi.reverse_geocoding(
+          latitude, longitude, res => {
+            console.log('成功-百度地图api【根据经纬度获取详细地址】响应结果:', res);
+            var cityName = res.result.addressComponent.city;
+            console.log('根据经纬度获取详细地址:', cityName);
+            app.globalData.cityName = cityName;
+            var city = {
+              cityName: cityName,
+              latitude: latitude,
+              longitude: longitude
+            }
+            wx.setStorageSync('cityStorage', city);
+            wx.switchTab({
+              url: '../index/index',
+            })
+            //方法2：wx.reLaunch()跳转
+            // wx.reLaunch({
+            //   url: '../food/food?cityName=' + cityName,
+            // })
+          }
+        );
       },
     })
-    const cityName = '上海';
-    app.globalData.cityName = cityName;
-    wx.setStorageSync('cityName', cityName);
-    wx.switchTab({
-      url: '../index/index',
-    })
-    //1.小程序的api获取当前的位置
-    // wx.getLocation({
-    //   success: (res) => {
-    //     console.log(res);
-    //     var latitude = res.latitude;
-    //     var longitude = res.longitude;
-    //     //2.显示经纬度位置  城市 
-    //     wx.request({
-    //       url: 'http://iwenwiki.com:3002/api/lbs/location',
-    //       data: {
-    //         latitude: latitude,
-    //         longitude: longitude
-    //       },
-    //       success: result => {
-    //         console.log(result.data.result.ad_info.city);
-    //         var cityName = result.data.result.ad_info.city.slice(0, 2); //2位
-    //         // wx.navigateBack({ })//返回 但是不能传递数据 
-    //         // wx.switchTab() 可以跳转页面tabBar 但是api后面url不能传递参数
-    //         //方法1：存储全局变量 --wx.switchTab()跳转-----------------------
-    //         app.globalData.cityName = cityName;
-    //         //数据存储到本地---存储本地--下次进入可以直接获取本地数据 html5
-    //         wx.setStorageSync('cityName', cityName)
-    //         console.log(app);
-    //         wx.switchTab({
-    //           url: '../food/food',
-    //         })
-
-    //         //方法2：wx.reLaunch()跳转
-    //         // wx.reLaunch({
-    //         //   url: '../food/food?cityName=' + cityName,
-    //         // })
-
-    //       }
-    //     })
-
-    //   },
-    // })
   },
   //第三步：点击人城市按钮--切换当前的城市 1.点击按钮获取当前的点击城市 2.把获取的值存储本地 全局 3.跳转页面
   selectCity: function (e) {
     var cityName = e.currentTarget.dataset.name;
-    app.globalData.cityName = cityName;
-    wx.setStorageSync('cityName', cityName);
-    wx.switchTab({
-      url: '../index/index',
+    mapapi.geocoding(cityName, res => {
+      console.log('成功-百度地图api根据城市名称获取经纬度-城市【' + cityName + '】响应结果:', res)
+      app.globalData.cityName = cityName;
+      var city = {
+        cityName: cityName,
+        latitude: res.result.location.lat,
+        longitude: res.result.location.lng
+      }
+      wx.setStorageSync('cityStorage', city);
+      wx.switchTab({
+        url: '../index/index',
+      })
+    }, res => {
+      console.log('失败-百度地图api根据城市名称获取经纬度-城市【' + cityName + '】响应结果:', res)
     })
+
   },
 
   /**
@@ -106,7 +95,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var city = wx.getStorageSync('cityStorage');
+    if (city.cityName) {
+      this.setData({
+        latitude: city.latitude,
+        longitude: city.longitude,
+      })
+    }
   },
 
   /**

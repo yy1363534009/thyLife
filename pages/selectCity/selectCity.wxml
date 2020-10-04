@@ -8,5 +8,5 @@ bindtap='selectCity' data-name='{{item}}'>{{item}}</button>
 
 
 <!-- 地图 -->
-<map longitude="{{longitude}}" latitude="{{latitude}}" scale="14"></map>
-<map longitude="{{longitude}}" latitude="{{latitude}}" scale="14" enable-satellite="true"></map>
+<map longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true"></map>
+<map longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" enable-satellite="true"></map>

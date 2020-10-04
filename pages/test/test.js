@@ -1,130 +1,79 @@
+// 引用百度地图微信小程序JSAPI模块 
+var bmap = require('../../libs/bmap-wx.min.js');
+
+var wxMarkerData = [];
 Page({
- 
-  /**
-   * 页面的初始数据
-   */
   data: {
-    tabTxt: ['品牌', '价格', '销量'],//分类
-    tab: [true, true, true],
-    pinpaiList: [{ 'id': '1', 'title': '品牌1' }, { 'id': '1', 'title': '品牌1' }],
-    pinpai_id: 0,//品牌
-    pinpai_txt: '',
-    jiage_id: 0,//价格
-    jiage_txt: '',
-    xiaoliang_id: 0,//销量
-    xiaoliang_txt: '',
-    details: [
-      {
-        img: '/images/house2.png',
-        prix: '73',
-        huxing: '3室2厅1卫',
-        area: '128',
-        price: '11456',
-        chanquan: '产权',
-        floor: '7/7',
-        title: '大连市西岗区锦园小区48号楼2单元707',
-        yongjin:'佣金1%，成交奖励奖励1万元',
-        world: [
-          {
-            message: 'foo',
-          },
-          {
-            message: 'bar'
-          }
-        ]
-      },
-      {
-        img: '/images/house2.png',
-        prix: '73',
-        huxing: '3室2厅1卫',
-        area: '128',
-        price: '11456',
-        chanquan: '产权',
-        floor: '7/7',
-        title: '大连市西岗区锦园小区48号楼2单元707',
-        yongjin: '佣金1%，成交奖励奖励1万元',
-        world: [
-          {
-            message: 'foo',
-          },
-          {
-            message: 'bar'
-          }
-        ]
-      },
-      {
-        img: '/images/house2.png',
-        prix: '73',
-        huxing: '3室2厅1卫',
-        area: '128',
-        price: '11456',
-        chanquan: '产权',
-        floor: '7/7',
-        title: '大连市西岗区锦园小区48号楼2单元707',
-        yongjin: '佣金1%，成交奖励奖励1万元',
-        world: [
-          {
-            message: 'foo',
-          },
-          {
-            message: 'bar'
-          }
-        ]
-      }
- 
-    ],
+    markers: [],
+    // latitude: '',
+    // longitude: '',
+    placeData: {},
+    latitude: "31.23037",
+    longitude: "121.4737",
   },
- 
-  // 选项卡
-  filterTab: function (e) {
-    var data = [true, true, true], index = e.currentTarget.dataset.index;
-    data[index] = !this.data.tab[index];
-    this.setData({
-      tab: data
-    })
+  makertap: function (e) {
+    var that = this;
+    var id = e.markerId;
+    that.showSearchInfo(wxMarkerData, id);
+    that.changeMarkerColor(wxMarkerData, id);
   },
- 
-  //筛选项点击操作
-  filter: function (e) {
-    var self = this, id = e.currentTarget.dataset.id, txt = e.currentTarget.dataset.txt, tabTxt = this.data.tabTxt;
-    switch (e.currentTarget.dataset.index) {
-      case '0':
-        tabTxt[0] = txt;
-        self.setData({
-          tab: [true, true, true],
-          tabTxt: tabTxt,
-          pinpai_id: id,
-          pinpai_txt: txt
-        });
-        break;
-      case '1':
-        tabTxt[1] = txt;
-        self.setData({
-          tab: [true, true, true],
-          tabTxt: tabTxt,
-          jiage_id: id,
-          jiage_txt: txt
-        });
-        break;
-      case '2':
-        tabTxt[2] = txt;
-        self.setData({
-          tab: [true, true, true],
-          tabTxt: tabTxt,
-          xiaoliang_id: id,
-          xiaoliang_txt: txt
-        });
-        break;
+  onLoad: function () {
+    var that = this;
+    // 新建百度地图对象 
+    var BMap = new bmap.BMapWX({
+      ak: 'RFkLwpB7eh6vurIvaaGbvsA1Lv6FBeWO'
+    });
+    var fail = function (data) {
+      console.log(data)
+    };
+    var success = function (data) {
+      wxMarkerData = data.wxMarkerData;
+      that.setData({
+        markers: wxMarkerData
+      });
+      that.setData({
+        latitude: wxMarkerData[0].latitude
+      });
+      that.setData({
+        longitude: wxMarkerData[0].longitude
+      });
     }
-    //数据筛选
-    self.getDataList();
+    // 发起POI检索请求 
+    BMap.search({
+      "query": '酒店',
+      fail: fail,
+      success: success,
+      // 此处需要在相应路径放置图片文件 
+      iconPath: '../../images/map/marker_red.png',
+      // 此处需要在相应路径放置图片文件 
+      iconTapPath: '../../images/map/marker_red.png'
+    });
   },
- 
-  //加载数据
-  getDataList: function () {
-    //调用数据接口，获取数据
- 
- 
+  showSearchInfo: function (data, i) {
+    var that = this;
+    that.setData({
+      placeData: {
+        title: '名称：' + data[i].title + '\n',
+        address: '地址：' + data[i].address + '\n',
+        telephone: '电话：' + data[i].telephone
+      }
+    });
+  },
+  changeMarkerColor: function (data, i) {
+    var that = this;
+    var markers = [];
+    for (var j = 0; j < data.length; j++) {
+      if (j == i) {
+        // 此处需要在相应路径放置图片文件 
+        data[j].iconPath = "../../images/map/marker_yellow.png";
+      } else {
+        // 此处需要在相应路径放置图片文件 
+        data[j].iconPath = "../../images/map/marker_red.png";
+      }
+      markers[j](data[j]);
+    }
+    that.setData({
+      markers: markers
+    });
   }
- 
 })

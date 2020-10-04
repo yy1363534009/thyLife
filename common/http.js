@@ -7,8 +7,8 @@
  *  参数5： success 成功函数
  *  参数6： fail失败函数
  */
-function http(method,url,params,message,success,fail){
-  if (message!=''){
+function request(method, url, params, message, success, fail) {
+  if (message != '') {
     wx.showLoading({
       title: message,
     })
@@ -16,29 +16,57 @@ function http(method,url,params,message,success,fail){
   //请求
   wx.request({
     //写一个请求的域名 后期修改域名网址 统一修改
-    url: 'http://iwenwiki.com:3002'+url,
-    method:method,
+    url: 'http://iwenwiki.com:3002' + url,
+    method: method,
     data: params,
-    success:res=>{
-        if(res.data.status==200){
-          //成功获取了数据
-          success(res.data);
-        }else{
-          //没有数据
-          fail(res.data);
-        }
+    success: res => {
+      if (res.data.status == 200) {
+        //成功获取了数据
+        success(res.data);
+      } else {
+        //没有数据
+        fail(res.data);
+      }
     },
-    fail:function(res){
+    fail: function (res) {
       fail(res.data);
     },
-    complete:function(res){
+    complete: function (res) {
       if (message != '') {
         wx.hideLoading();
       }
     }
   })
 
- }
+}
 
- //暴露出去
- module.exports=http;//{http:http}
+function requestexternal(method, url, params, message, success, fail) {
+  if (message != '') {
+    wx.showLoading({
+      title: message,
+    })
+  }
+  //请求
+  wx.request({
+    url: url,
+    method: method,
+    data: params,
+    success: res => {
+      success(res.data);
+    },
+    fail: function (res) {
+      fail(res.data);
+    },
+    complete: function (res) {
+      if (message != '') {
+        wx.hideLoading();
+      }
+    }
+  })
+}
+
+//暴露出去
+module.exports = {
+  request: request,
+  requestexternal: requestexternal
+}; //{http:http}

@@ -1,4 +1,3 @@
-<!--index.wxml-->
 <view class="container">
   <cu-custom bgColor="bg-gradual-white">
     <view slot="right" class='loaction'>

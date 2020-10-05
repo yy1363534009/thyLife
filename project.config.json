@@ -110,6 +110,19 @@
           "pathName": "pages/test/test",
           "query": "",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/demand/demand-jobsearch/demand-jobsearch",
+          "pathName": "pages/demand/demand-jobsearch/demand-jobsearch",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/demand/demand",
+          "pathName": "pages/demand/demand",
+          "scene": null
         }
       ]
     }

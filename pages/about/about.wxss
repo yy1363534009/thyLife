@@ -1,0 +1,47 @@
+.userinfo-id {
+  background-color: #FFCC00;
+  height: 300rpx;
+  width: 100%;
+}
+
+.userinfo-id .userinfo {
+  display: flex;
+  align-items: center;
+  padding: 0rpx 15rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+.userinfo-idmanager{
+  margin: 0;
+  width: 130rpx;
+  margin-top: 15rpx;
+  font-size: 18rpx;
+  letter-spacing: 2rpx;
+  background-color: #FFCC00;
+  border: 1px solid;
+  padding: 0 10rpx;
+}
+
+.userinfo-server {
+  margin-left: 30rpx;
+  margin-top: -100rpx;
+  border-radius: 10rpx;
+  background-color: #FFFFFF;
+  height: 200rpx;
+  width: 690rpx;
+}
+.servertext{
+  font-size: 30rpx;
+  font-weight: bolder;
+  margin: 30rpx 20rpx;
+}

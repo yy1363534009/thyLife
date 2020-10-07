@@ -70,30 +70,9 @@
       "current": -1,
       "list": [
         {
-          "id": 0,
-          "name": "pages/order/order",
-          "pathName": "pages/order/order",
-          "query": "",
-          "scene": null
-        },
-        {
           "id": -1,
           "name": "pages/index/index",
           "pathName": "pages/index/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "colorui/components/cu-custom",
-          "pathName": "colorui/components/cu-custom",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": 3,
-          "name": "pages/news/newsDetail/newsDetail",
-          "pathName": "pages/news/newsDetail/newsDetail",
           "query": "",
           "scene": null
         },
@@ -113,15 +92,16 @@
         },
         {
           "id": -1,
-          "name": "pages/demand/demand-jobsearch/demand-jobsearch",
-          "pathName": "pages/demand/demand-jobsearch/demand-jobsearch",
+          "name": "pages/demand/demand",
+          "pathName": "pages/demand/demand",
           "query": "",
           "scene": null
         },
         {
           "id": -1,
-          "name": "pages/demand/demand",
-          "pathName": "pages/demand/demand",
+          "name": "pages/about/about",
+          "pathName": "pages/about/about",
+          "query": "",
           "scene": null
         }
       ]

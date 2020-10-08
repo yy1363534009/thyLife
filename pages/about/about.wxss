@@ -35,13 +35,20 @@
 .userinfo-server {
   margin-left: 30rpx;
   margin-top: -100rpx;
+  margin-bottom: 20rpx;
   border-radius: 10rpx;
   background-color: #FFFFFF;
-  height: 200rpx;
+  height: auto;
+  width: 690rpx;
+}
+.about{
+  margin-left: 30rpx;
+  border-radius: 10rpx;
+  background-color: #FFFFFF;
+  height: auto;
   width: 690rpx;
 }
 .servertext{
   font-size: 30rpx;
   font-weight: bolder;
-  margin: 30rpx 20rpx;
 }

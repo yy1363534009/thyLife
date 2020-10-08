@@ -6,7 +6,29 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    iconList: [{
+    gridCol: 4,
+    myServerList: [{
+      icon: 'cardboardfill',
+      color: 'red',
+      badge: 120,
+      name: '订单'
+    }, {
+      icon: 'recordfill',
+      color: 'orange',
+      badge: 1,
+      name: '收藏'
+    }, {
+      icon: 'picfill',
+      color: 'yellow',
+      badge: 0,
+      name: '券包'
+    }, {
+      icon: 'noticefill',
+      color: 'olive',
+      badge: 22,
+      name: '会员卡'
+    }],
+    otherServerList: [{
       icon: 'cardboardfill',
       color: 'red',
       badge: 120,
@@ -56,8 +78,7 @@ Page({
       color: 'mauve',
       badge: 0,
       name: '版权'
-    }],
-    gridCol: 3
+    }]
   },
   onLoad: function () {
     this.onLoadUserInfo();
@@ -96,7 +117,7 @@ Page({
   /**
    * 获取用户信息
    */
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -104,26 +125,4 @@ Page({
       hasUserInfo: true
     })
   },
-  //----菜单start------
-  showModal(e) {
-    this.setData({
-      modalName: e.currentTarget.dataset.target
-    })
-  },
-  hideModal(e) {
-    this.setData({
-      modalName: null
-    })
-  },
-  gridchange: function (e) {
-    this.setData({
-      gridCol: e.detail.value
-    });
-  },
-  gridswitch: function (e) {
-    this.setData({
-      gridBorder: e.detail.value
-    });
-  }
-  //----菜单end------
 })

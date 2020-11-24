@@ -1,6 +1,6 @@
 //获取应用实例
 const app = getApp()
-
+var http = require('../../common/http.js');
 Page({
   data: {
     userInfo: {},
@@ -79,6 +79,32 @@ Page({
       badge: 0,
       name: '版权'
     }]
+  },
+  onShow: function () {
+    const weChatUserInfo = {
+      nickName: "",
+      gender: 0,
+      city: "",
+      province: ""
+    };
+    wx.getUserInfo({
+      success: res => {
+        console.log("登录后端userInfo", res.userInfo);
+        weChatUserInfo.nickName = res.userInfo.nickName;
+        weChatUserInfo.gender = res.userInfo.gender;
+        weChatUserInfo.city = res.userInfo.city;
+        weChatUserInfo.province = res.userInfo.province;
+      }
+    })
+    console.log("登录后端userInfo--weChatUserInfo.nickName", weChatUserInfo.nickName);
+    const param = {
+      code: "123456",
+      weChatUserInfo: weChatUserInfo
+    }
+    console.log("登录后端请求开始");
+    http.request("POST", "auth", param, "登录", res => {
+      console.log("登录后端", res);
+    }, error => {});
   },
   onLoad: function () {
     this.onLoadUserInfo();

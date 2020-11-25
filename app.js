@@ -16,22 +16,24 @@ App({
   globalData: {
     ak: 'XSpSgFpfDC5ZMUq6cojw3XqpFa8VGmDF',
     cityName: '', //切换的城市的变量
-    userInfo: null
+    userInfo: null,
+    header: {
+      'Cookie': ''//用语保存sessionid到http请求头中
+    }
   },
   /**
    * 小程序登录
    */
   wxlogin() {
-    // 登录
+    // 登录获取code
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        const param = {
-          code: res.code
-        }
-        http.request("POST", "auth", param, "登录", res => {
-          console.log("登录后端", res);
-        }, error => {
+        let params={
+          code:res.code
+        };
+        http.request("POST", "auth", params, "登录", res => {
+          console.log("微信小程序后端登录响应的结果", res);
+        }, error => { 
 
         });
       }
@@ -45,7 +47,6 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -79,5 +80,5 @@ App({
       }
     })
     // console.log('appjs-Custom:'+this.globalData.Custom+'-CustomBar:'+this.globalData.CustomBar)
-  }
+  },
 })

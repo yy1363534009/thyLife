@@ -14,11 +14,11 @@ App({
     this.colorUiHeaderInit();
   },
   globalData: {
-    ak: 'XSpSgFpfDC5ZMUq6cojw3XqpFa8VGmDF',
+    ak: 'XSpSgFpfDC5ZMUq6cojw3XqpFa8VGmDF',//百度地图个人ak
     cityName: '', //切换的城市的变量
     userInfo: null,
     header: {
-      'Cookie': ''//用语保存sessionid到http请求头中
+      'Authorization': 'Bearer '//保存token到http请求头中,用于认证
     }
   },
   /**
@@ -28,13 +28,16 @@ App({
     // 登录获取code
     wx.login({
       success: res => {
-        let params={
+        let param={
           code:res.code
         };
-        http.request("POST", "auth", params, "登录", res => {
+        console.log("微信小程序后端登录参数code", res.code);
+        http.request("POST", "/auth/wechatLogin", param, "登录", res => {
           console.log("微信小程序后端登录响应的结果", res);
+          this.globalData.header.Authorization = this.globalData.header.Authorization + res.data.token;
+          console.log("微信小程序后端登录响应的结果-header", this.globalData.header.Authorization);
         }, error => { 
-
+          console.log("微信小程序后端登录响应的结果", error);
         });
       }
     })

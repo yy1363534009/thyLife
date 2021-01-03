@@ -16,7 +16,7 @@ function request(method, url, params, message, success, fail) {
   //请求
   wx.request({
     //写一个请求的域名 后期修改域名网址 统一修改
-    url: 'http://localhost/' + url,
+    url: 'http://localhost/thelife-webapp/api' + url,
     method: method,
     data: params,
     success: res => {

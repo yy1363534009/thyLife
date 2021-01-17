@@ -11,7 +11,8 @@
     "pages/order/order",
     "pages/about/about",
     "pages/selectCity/selectCity",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/aaaaa/aaaaa"
   ],
   "permission": {
     "scope.userLocation": {

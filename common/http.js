@@ -1,3 +1,11 @@
+const GET = 'GET';
+const POST = 'POST';
+const PUT = 'PUT';
+const FORM = 'FORM';
+const DELETE = 'DELETE';
+
+const baseURL = 'http://localhost/thelife-webapp/api/';
+const tokenStartWith = 'Bearer_';
 /**
  * 网络请求封装方法
  *  参数1： method (string) 请求的类型 
@@ -13,12 +21,21 @@ function request(method, url, params, message, success, fail) {
       title: message,
     })
   }
+  try {
+    console.log("aaaaaa微信小程序后端登录响应的结果-token", wx.getStorageSync('token'));
+  } catch (e) {}
+  // 请求头
+  let header = {
+    'content-type': method != GET ? 'application/json' : '',
+    'Authorization': wx.getStorageSync('token') == null ? '' : tokenStartWith + wx.getStorageSync('token')
+  };
   //请求
   wx.request({
     //写一个请求的域名 后期修改域名网址 统一修改
-    url: 'http://localhost/thelife-webapp/api' + url,
+    url: baseURL + url,
     method: method,
     data: params,
+    header: header,
     success: res => {
       if (res.data.status == 200) {
         //成功获取了数据
@@ -68,5 +85,10 @@ function requestexternal(method, url, params, message, success, fail) {
 //暴露出去
 module.exports = {
   request: request,
-  requestexternal: requestexternal
+  requestexternal: requestexternal,
+  GET,
+  POST,
+  PUT,
+  FORM,
+  DELETE
 }; //{http:http}

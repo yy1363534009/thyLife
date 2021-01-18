@@ -133,16 +133,25 @@ Page({
         success: res => {
           let param = {
             code: res.code,
-            userDetail:app.globalData.userInfo
+            userDetail: app.globalData.userInfo
           };
-          http.request("POST", "/auth/wechatLogin", param, "登录", 
-          res => {
-            console.log("微信小程序后端登录响应的结果", res);
-            app.globalData.header.Authorization = app.globalData.header.Authorization + res.data.token;
-            console.log("微信小程序后端登录响应的结果-header", app.globalData.header.Authorization);
-          }, error => {
+          http.request(http.POST, "auth/wechatLogin", param, "登录",
+            res => {
+              console.log("微信小程序后端登录响应的结果", res);
+              try {
+                wx.setStorageSync('token', res.data.token);
+              } catch (e) {}
+              console.log("微信小程序后端登录响应的结果-token", wx.getStorageSync('token'));
+            }, error => {
 
-          });
+            });
+
+          http.request(http.GET, "jobsearch", null, "测试token",
+            res => {
+              console.log("获取找活列表", res.data);
+            }, error => {
+
+            });
         }
       })
     } else {

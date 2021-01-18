@@ -9,9 +9,6 @@ App({
     ak: 'XSpSgFpfDC5ZMUq6cojw3XqpFa8VGmDF', //百度地图个人ak
     cityName: '', //切换的城市的变量
     userInfo: null, //保存当前用户信息
-    header: {
-      'Authorization': 'Bearer ' //保存token到http请求头中,用于认证
-    }
   },
 
 
@@ -61,10 +58,10 @@ App({
               let param = {
                 code: res.code
               };
-              http.request("POST", "/auth/wechatLogin", param, "登录", res => {
+              http.request("POST", "auth/wechatLogin", param, "登录", res => {
                 console.log("微信小程序后端登录响应的结果", res);
-                this.globalData.header.Authorization = this.globalData.header.Authorization + res.data.token;
-                console.log("微信小程序后端登录响应的结果-header", this.globalData.header.Authorization);
+                wx.setStorageSync('token', res.data.token);
+                console.log("微信小程序后端登录响应的结果-token", wx.getStorageSync('token'));
               }, error => {});
             }
           })

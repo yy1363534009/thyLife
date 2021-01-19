@@ -9,6 +9,6 @@ Page({
     CustomBar: app.globalData.CustomBar,
   },
   search(event) {
-    console.log('搜索的值是：'+event.detail.value);
+    console.log('>>>搜索的值是：'+event.detail.value);
   }
 })

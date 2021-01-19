@@ -80,7 +80,16 @@ Page({
       name: '版权'
     }]
   },
-  onShow: function () {},
+  onShow: function () {
+    if (wx.getStorageSync('token')) {
+      http.request(http.GET, "jobsearch", null, "测试token",
+        res => {
+          console.log('>>>about.js->测试token是否正常', res.data);
+        }, error => {}
+      );
+    }
+
+  },
   onLoad: function () {
     this.onLoadUserInfo();
   },
@@ -88,15 +97,13 @@ Page({
    * 页面加载获取用户信息
    */
   onLoadUserInfo() {
-    console.log('about.js->onLoad()->[app.globalData.userInfo]', app.globalData.userInfo);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
     } else if (this.data.canIUse) {
-      // 由于getUserInfo()是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
+      // 由于getUserInfo()是网络请求，可能会在 Page.onLoad 之后才返回 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
         this.setData({
           userInfo: res.userInfo,
@@ -122,7 +129,7 @@ Page({
    */
   getUserInfo(e) {
     if (e.detail.userInfo) {
-      //用户按了确认授权按钮
+      console.log('>>>用户按了确认授权按钮')
       app.globalData.userInfo = e.detail.userInfo;
       this.setData({
         userInfo: e.detail.userInfo,
@@ -137,25 +144,14 @@ Page({
           };
           http.request(http.POST, "auth/wechatLogin", param, "登录",
             res => {
-              console.log("微信小程序后端登录响应的结果", res);
-              try {
-                wx.setStorageSync('token', res.data.token);
-              } catch (e) {}
-              console.log("微信小程序后端登录响应的结果-token", wx.getStorageSync('token'));
-            }, error => {
-
-            });
-
-          http.request(http.GET, "jobsearch", null, "测试token",
-            res => {
-              console.log("获取找活列表", res.data);
-            }, error => {
-
-            });
+              console.log('>>>about.js->微信小程序后端登录响应的结果', res);
+              wx.setStorageSync('token', res.data.token);
+            }, error => {}
+          );
         }
       })
     } else {
-      //用户按了拒绝授权按钮
+      console.log('>>>用户按了拒绝授权按钮')
       wx.showModal({
         title: '警告',
         content: '您拒绝授权，使用小程序，请授权！',
@@ -164,13 +160,12 @@ Page({
         success: function (res) {
           // 用户没有授权成功，不需要改变 isHide 的值
           if (res.confirm) {
-            console.log('用户点击了“返回授权”');
             wx.showLoading({
               title: '用户点击了“返回授权”',
             })
             setTimeout(function () {
               wx.hideLoading()
-            }, 500)
+            }, 1000)
           }
         }
       });

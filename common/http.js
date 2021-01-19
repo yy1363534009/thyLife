@@ -4,10 +4,13 @@ const PUT = 'PUT';
 const FORM = 'FORM';
 const DELETE = 'DELETE';
 
+// 内部后端请求URL
 const baseURL = 'http://localhost/thelife-webapp/api/';
-const tokenStartWith = 'Bearer_';
+// token前缀
+const tokenStartWith = 'Bearer ';
+
 /**
- * 网络请求封装方法
+ * 内部资源网络请求
  *  参数1： method (string) 请求的类型 
  *  参数2： url (string) 请求的url地址
  *  参数3： params (json) 请求携带的参数
@@ -22,11 +25,11 @@ function request(method, url, params, message, success, fail) {
     })
   }
   try {
-    console.log("aaaaaa微信小程序后端登录响应的结果-token", wx.getStorageSync('token'));
+    console.log('>>>header.Authorization', tokenStartWith + wx.getStorageSync('token'));
   } catch (e) {}
   // 请求头
   let header = {
-    'content-type': method != GET ? 'application/json' : '',
+    'content-type': 'application/json', // 默认值
     'Authorization': wx.getStorageSync('token') == null ? '' : tokenStartWith + wx.getStorageSync('token')
   };
   //请求
@@ -37,26 +40,47 @@ function request(method, url, params, message, success, fail) {
     data: params,
     header: header,
     success: res => {
+      // 响应状态码=200 → 成功
       if (res.data.status == 200) {
         //成功获取了数据
         success(res.data);
       } else {
-        //没有数据
+        // 响应状态码<>200 → 系统抛出异常、打印异常信息
+        wx.showLoading({
+          title: res.data.message,
+        })
         fail(res.data);
       }
     },
     fail: function (res) {
+      wx.showLoading({
+        title: res.data.message,
+      })
       fail(res.data);
     },
     complete: function (res) {
       if (message != '') {
         wx.hideLoading();
       }
+      if (res.data.status != 200) {
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 1000)
+      }
     }
   })
 
 }
 
+/**
+ * 外部资源网络请求
+ *  参数1： method (string) 请求的类型 
+ *  参数2： url (string) 请求的url地址
+ *  参数3： params (json) 请求携带的参数
+ *  参数4： message(string) 【loading=boolean】信息弹框内容
+ *  参数5： success 成功函数
+ *  参数6： fail失败函数
+ */
 function requestexternal(method, url, params, message, success, fail) {
   if (message != '') {
     wx.showLoading({

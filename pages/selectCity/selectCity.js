@@ -31,7 +31,7 @@ Page({
   getLocation: function () {
     wx.getLocation({
       success: (res) => {
-        console.log('获取当前的位置:', +res);
+        console.log('>>>获取当前的位置:', +res);
         console.log(res);
         var latitude = res.latitude;
         var longitude = res.longitude;
@@ -41,9 +41,9 @@ Page({
         });
         mapapi.reverse_geocoding(
           latitude, longitude, res => {
-            console.log('成功-百度地图api【根据经纬度获取详细地址】响应结果:', res);
+            console.log('>>>成功-百度地图api【根据经纬度获取详细地址】响应结果:', res);
             var cityName = res.result.addressComponent.city;
-            console.log('根据经纬度获取详细地址:', cityName);
+            console.log('>>>根据经纬度获取详细地址:', cityName);
             app.globalData.cityName = cityName;
             var city = {
               cityName: cityName,
@@ -67,7 +67,7 @@ Page({
   selectCity: function (e) {
     var cityName = e.currentTarget.dataset.name;
     mapapi.geocoding(cityName, res => {
-      console.log('成功-百度地图api根据城市名称获取经纬度-城市【' + cityName + '】响应结果:', res)
+      console.log('>>>成功-百度地图api根据城市名称获取经纬度-城市【' + cityName + '】响应结果:', res)
       app.globalData.cityName = cityName;
       var city = {
         cityName: cityName,
@@ -79,7 +79,7 @@ Page({
         url: '../index/index',
       })
     }, res => {
-      console.log('失败-百度地图api根据城市名称获取经纬度-城市【' + cityName + '】响应结果:', res)
+      console.log('>>>失败-百度地图api根据城市名称获取经纬度-城市【' + cityName + '】响应结果:', res)
     })
 
   },

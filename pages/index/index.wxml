@@ -1,11 +1,14 @@
 <view class="container">
+
   <cu-custom bgColor="bg-gradual-white">
     <view slot="right" class='loaction'>
-      <navigator url='../selectCity/selectCity' hover-class='none' style="width: 200rpx;padding-left: 10rpx;text-align: left;">{{location}}<text
-          class="cuIcon-triangledownfill lg text-gray"></text></navigator>
+      <navigator url='../selectCity/selectCity' hover-class='none' style="width: 200rpx;padding-left: 10rpx;text-align: left;">
+        {{location}} <text class="cuIcon-triangledownfill lg text-gray"></text>
+      </navigator>
     </view>
     <view slot="content">活过来了</view>
   </cu-custom>
+
   <!-- 全屏限高轮播 -->
   <!-- <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
       autoplay="true" interval="2000" duration="500">
@@ -27,6 +30,7 @@
       </view>
     </swiper-item>
   </swiper>
+
   <!-- 菜单start -->
   <view class="menu-container">
     <view class="menu">
@@ -109,6 +113,7 @@
     </view>
   </view>
   <view class="menu-bottom-blank"></view>
+
   <!-- 每日推荐专区start -->
   <view class="hostnews-container">
     <view class="hostnews-header">
@@ -137,6 +142,7 @@
       </view>
     </view>
   </view>
+
   <!-- 每日推荐专区start -->
   <view class="hostnews-container">
     <view class="hostnews-header">
@@ -165,6 +171,7 @@
       </view>
     </view>
   </view>
+
   <!-- 每日推荐专区start -->
   <view class="hostnews-container">
     <view class="hostnews-header">
@@ -193,4 +200,5 @@
       </view>
     </view>
   </view>
+
 </view>

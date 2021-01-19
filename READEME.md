@@ -45,6 +45,6 @@ onUnload: 页面卸载
 在page的onLoad中设置一个回调
 app.userInfoReadyCallback = res => {
 	if (res != '') {
-		console.log("app.globalData.userInfo")
+		console.log('>>>p.globalData.userInfo')
 	}
 }

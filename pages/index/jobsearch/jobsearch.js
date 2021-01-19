@@ -123,25 +123,25 @@ Page({
   // 下拉筛选---------------------------------------start----------------------------------
 
   selectAll(e) {
-    console.log('下拉筛选选中[全部]索引' + e.currentTarget.dataset.nav)
+    console.log('>>>下拉筛选选中[全部]索引' + e.currentTarget.dataset.nav)
     this.setData({
       shownavindex: e.currentTarget.dataset.nav
     })
   },
   selectNearby(e) {
-    console.log('下拉筛选选中[附近]索引' + e.currentTarget.dataset.nav)
+    console.log('>>>下拉筛选选中[附近]索引' + e.currentTarget.dataset.nav)
     this.setData({
       shownavindex: e.currentTarget.dataset.nav
     })
   },
   selectOrder(e) {
-    console.log('下拉筛选选中[智能排序]索引' + e.currentTarget.dataset.nav)
+    console.log('>>>下拉筛选选中[智能排序]索引' + e.currentTarget.dataset.nav)
     this.setData({
       shownavindex: e.currentTarget.dataset.nav
     })
   },
   selectfilter(e) {
-    console.log('下拉筛选选中[帅选]索引' + e.currentTarget.dataset.nav)
+    console.log('>>>下拉筛选选中[帅选]索引' + e.currentTarget.dataset.nav)
     this.setData({
       shownavindex: e.currentTarget.dataset.nav
     })

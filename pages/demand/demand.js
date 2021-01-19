@@ -49,13 +49,13 @@ Page({
     //     'content-type': 'application/json' // 默认值
     //   },
     //   success(res) {
-    //     console.log('状态码：' + res.statusCode + '，响应结果：' + res.data)
+    //     console.log('>>>状态码：' + res.statusCode + '，响应结果：' + res.data)
     //   },
     //   fail(res) {
-    //     console.log('状态码：' + res.statusCode + '，响应结果：' + res.data)
+    //     console.log('>>>状态码：' + res.statusCode + '，响应结果：' + res.data)
     //   },
     //   complete(res) {
-    //     console.log('页面加载后台请求结束' + '状态码：' + res.statusCode + '，响应结果：' + res.data)
+    //     console.log('>>>页面加载后台请求结束' + '状态码：' + res.statusCode + '，响应结果：' + res.data)
     //   }
     // })
   },
@@ -64,7 +64,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('页面显示');
+    console.log('>>>页面显示');
     console.log(app);
     //重新修改data 
    if(app.globalData.cityName){//全局有值

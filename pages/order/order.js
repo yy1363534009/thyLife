@@ -46,7 +46,7 @@ Page({
     })
     const id = e.currentTarget.dataset.id;
     if (id == 0) {
-      console.log('全部订单');
+      console.log('>>>全部订单');
     }
   }
 })

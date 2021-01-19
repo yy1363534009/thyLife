@@ -33,7 +33,7 @@ App({
         // 判断用户是否授权，正常直接通过微信自带的函数【wx.getUserInfo】获取用户信息并展示，但是本小程序支持用户信息更改，所以请求后端获取用户信息
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          
+
           wx.getUserInfo({
             success: res => {
               wx.showLoading({
@@ -58,11 +58,12 @@ App({
               let param = {
                 code: res.code
               };
-              http.request("POST", "auth/wechatLogin", param, "登录", res => {
-                console.log("微信小程序后端登录响应的结果", res);
-                wx.setStorageSync('token', res.data.token);
-                console.log("微信小程序后端登录响应的结果-token", wx.getStorageSync('token'));
-              }, error => {});
+              http.request(http.POST, "auth/wechatLogin", param, "登录",
+                res => {
+                  console.log('>>>app.js->微信小程序后端登录响应的结果', res);
+                  wx.setStorageSync('token', res.data.token);
+                }, error => {}
+              );
             }
           })
         }
@@ -92,7 +93,7 @@ App({
         }
       }
     })
-    // console.log('appjs-Custom:'+this.globalData.Custom+'-CustomBar:'+this.globalData.CustomBar)
+    // console.log('>>>appjs-Custom:'+this.globalData.Custom+'-CustomBar:'+this.globalData.CustomBar)
   },
 
 
